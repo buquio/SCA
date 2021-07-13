@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background: #303A52;
+    font-family: 'Nunito', sans-serif;
+    color: #A5B2D3;
+    padding: .5em;
+    height: 100vh;
+    /* text-align:center; */
+    line-height: 1.4em;
+
+}
+
+
+.main-header {
+    background: #2b3448;
+    margin-top: 0;
+    
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+code {
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+/* Navigation */
+.inner-wrapper {
+    padding: 1em;
+}
+
+nav {
+    text-align: left;
+    position: fixed;
+    background: #2C354A;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 80%; /*80%-width of the content area or use padding*/
+    visibility: hidden;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all .3s;
+    margin-top: 70px;
+    
+}
+
+
+nav p {
+    margin-bottom: 0;
+}
+
+nav ul li a {
+    font-size: 1.2em;
+    padding: .8em 1em;
+    display: block;
+}
+
+.selected {
+    background: #9E579D;
+}
+
+
+/* Main Section */
+
+header {
+    color: white;
+    margin-top: 1em;
+    font-size: 1.5em;
+    margin-bottom: 0;
+    padding: 0;
+
+}
+header p{
+    margin-top: 0;
+}
+
+.underlined {
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* Large Phones */
+
+@media (min-width: 420px) {
+    body {
+        padding: 1em;
+        text-align: left;
+    }
+   
+}
+
+@media (min-width: 550px) {
+        nav {
+        width: 40%;
+    }
+}
+
+
+@media (min-width: 850px) {
+    body {
+        display: grid;
+        grid-template-columns: 250px auto;
+        grid-template-rows: 100px auto;
+        grid-template-areas:
+            "header header"
+            "sidebar main";
+        padding: 0;
+    }
+    
+    header, main {
+        padding: 1.5em;
+    }
+    
+    nav {
+        grid-area: sidebar;
+        opacity: 1;
+        visibility: unset;
+        transform: translateX(0);
+        width: 100%;
+        position: unset;
+        
+    }
+    
+    header {
+        grid-area: header;
+    }
+    
+    main {
+        grid-area: main;
+    }
+    
+    a.logo {
+        margin: 0;
+    }
+    svg {
+        display: none;
+    }
+}
+
